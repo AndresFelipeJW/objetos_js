@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Caracteres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #inputTexto {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        #contador {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de Caracteres</h1>
+    <textarea id="inputTexto" placeholder="Escribe algo..."></textarea>
+    <p id="contador">Número de caracteres: 0</p>
+
+    <script>
+        // Obtener el elemento de entrada de texto y el párrafo del contador
+        const inputTexto = document.getElementById("inputTexto");
+        const contador = document.getElementById("contador");
+
+        // Función para contar caracteres y actualizar el contador
+        function contarCaracteres() {
+            const texto = inputTexto.value;
+            const numCaracteres = texto.length;
+            contador.textContent = "Número de caracteres: " + numCaracteres;
+        }
+
+        // Escuchar el evento de entrada de texto
+        inputTexto.addEventListener("input", contarCaracteres);
+    </script>
+</body>
+</html>
+
